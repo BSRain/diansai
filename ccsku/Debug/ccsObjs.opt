@@ -1,0 +1,1 @@
+"./GO/Black_DELAY.obj" "./GO/Black_GPIO.obj" "./GO/Black_INTERRUPT.obj" "./GO/Black_KEY.obj" "./GO/Black_LED.obj" "./GO/Black_OLED.obj" "./GO/Black_PWM.obj" "./GO/Black_USART.obj" "./USER/Black_Init.obj" "./USER/Black_readme.obj" "./USER/main.obj" "../lnk_msp430f5529.cmd" -llibmath.a -llibc.a 

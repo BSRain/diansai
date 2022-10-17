@@ -1,0 +1,209 @@
+#include "MSP430G2553.h"
+#include "stdint.h"
+#include <stdio.h>
+/*
+初始化系统时钟
+
+
+*/
+void InitSystemClock(void)
+{
+	/*配置DCO为1MHz*/
+    DCOCTL = CALDCO_1MHZ;
+    BCSCTL1 = CALBC1_1MHZ;
+    /*配置SMCLK的时钟源为DCO*/
+    BCSCTL2 &= ~SELS;
+    /*SMCLK的分频系数置为1*/
+    BCSCTL2 &= ~(DIVS0 | DIVS1);
+}
+/*
+初始化串口
+
+
+
+
+*/
+void InitUART(void)
+{
+    /*复位USCI_Ax*/
+    UCA0CTL1 |= UCSWRST;
+
+    /*选择USCI_Ax为UART模式*/
+    UCA0CTL0 &= ~UCSYNC;
+
+    /*配置UART时钟源为SMCLK*/
+    UCA0CTL1 |= UCSSEL1;
+
+    /*配置波特率为9600@1MHz*/
+    UCA0BR0 = 0x68;
+    UCA0BR1 = 0x00;
+    UCA0MCTL = 1 << 1;
+    /*使能端口复用*/
+    P1SEL |= BIT1 + BIT2;
+    P1SEL2 |= BIT1 + BIT2;
+    /*清除复位位，使能UART*/
+    UCA0CTL1 &= ~UCSWRST;
+}
+/*
+通过串口发送字符串
+
+
+*/
+void UARTSendString(uint8_t *pbuff,uint8_t num)
+{
+	uint8_t cnt = 0;
+	for(cnt = 0;cnt < num;cnt ++)
+	{
+		while(UCA0STAT & UCBUSY);
+		UCA0TXBUF = *(pbuff + cnt);
+	}
+}
+/*
+初始化ADC
+
+
+*/
+void InitADC(void)
+{
+	  /*设置ADC时钟MCLK*/
+	  ADC10CTL1 |= ADC10SSEL_2;
+	  /*ADC 2分频*/
+	  ADC10CTL1 |= ADC10DIV_0;
+	  /*设置ADC基准源*/
+	  ADC10CTL0 |= SREF_1;
+	  /*设置ADC采样保持时间64CLK*/
+	  ADC10CTL0 |= ADC10SHT_3;
+	  /*设置ADC采样率200k*/
+	  ADC10CTL0 &= ~ADC10SR;
+	  /*ADC基准选择2.5V*/
+	  ADC10CTL0 |= REF2_5V;
+	  /*开启基准*/
+	  ADC10CTL0 |= REFON;
+	  /*选择ADC输入通道A0*/
+	  ADC10CTL1 |= INCH_0;
+	  /*允许A0模拟输入*/
+	  ADC10AE0 |= 0x0001;
+	  /*开启ADC*/
+	  ADC10CTL0 |= ADC10ON;
+}
+/*
+进行一次ADC转换并且返回ADC转换结果
+
+*/
+uint16_t GetADCValue(void)
+{
+	  /*开始转换*/
+	  ADC10CTL0 |= ADC10SC|ENC;
+	  /*等待转换完成*/
+	  while(ADC10CTL1&ADC10BUSY);
+	  /*返回结果*/
+	  return ADC10MEM;
+}
+/*
+PWM配置
+
+
+
+*/
+/*void PWM
+*/
+
+struct 
+{
+    float set_angle;//设定速度 
+    float actual_angle;//实际速度
+    float error;//偏差  
+    float error_next;//上一个偏差  
+    float error_last;//上上一个偏差 
+	float error_add; 
+    float kp,ki,kd;//定义比例，积分，微分参数  
+    float umax,umin; 
+}pid;
+void pid_init()
+{
+    pid.set_angle = 0.0;
+    pid.actual_angle = 0.0;
+    pid.error = 0.0;
+    pid.error_next = 0.0;
+    pid.error_last = 0.0;
+	pid.error_add=0.0;
+	pid.umax=70;
+    pid.kp = 0.15;
+    pid.ki = 1.37;
+    pid.kd = 1.97;
+}
+void pid_realise(float angle)//实现pid  
+{
+	int gex;
+        float increment_angle;
+    pid.set_angle = angle;//设置目标速度  
+    pid.error = pid.set_angle - pid.actual_angle;	  //设定-实际 
+	if(pid.actual_angle>pid.umax)
+	{
+		if(pid.error>30)
+		{
+			gex=0;	
+		}
+		else
+		{
+			gex=1;
+			if(pid.error<0)
+			{
+				pid.error_add+=pid.error;
+			}
+		}
+	} 
+    increment_angle = pid.kp*pid.error+gex*pid.ki*pid.error_add+pid.kd*(pid.error-pid.error_next);//增量计算公式  
+ 
+    pid.error_next = pid.error;
+  
+}
+
+int main( void )
+{
+  
+  // Stop watchdog timer to prevent time out reset
+  WDTCTL = WDTPW + WDTHOLD;
+  InitSystemClock();
+  InitUART();
+  InitADC();
+  GetADCValue();
+ 
+  unsigned int cnt = 0;
+  /*配置DCO频率为1MHz*/
+    DCOCTL = CALDCO_1MHZ;
+    BCSCTL1 = CALBC1_1MHZ;
+    /*初始化P1.6为输入*/
+    P1DIR &= ~BIT6;
+
+    /*设置时钟源为SMCLK*/
+    TA1CTL |= TASSEL1;
+    /*设置工作模式为Up&Down*/
+    TA1CTL |= MC0|MC1;
+    /*设置TA1CCR0*/
+    TA1CCR0 = 65535;
+    /*设置TA1CCR2*/
+    TA1CCR2 = 30000;//占空比(TACCR0 - TACCR2) / TACCR0,频率=SMCLK/(TACCR0+1)/2
+    /*设置为比较模式*/
+    TA1CCTL0 &= ~CAP;
+    TA1CCTL2 &= ~CAP;
+    /*设置比较输出模式*/
+    TA1CCTL2 |= OUTMOD_6;
+    /*设置IO复用*/
+    P2SEL |= BIT5;
+    P2DIR |= BIT5;
+  while(1)
+  {
+    
+    for(cnt = 0;cnt < 65535;cnt ++)
+    	{
+    		TA1CCR2 = cnt;
+    		__delay_cycles(5000);
+    	}
+    	for(cnt = 65535;cnt > 0;cnt --)
+    	{
+    		TA1CCR2 = cnt;
+    		__delay_cycles(5000);
+    	}
+  }
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<userOverrides>
+    <override>
+        <path>D:\Baiduyun\比赛巡线电动小车\car.c</path>
+        <encoding>System</encoding>
+    </override>
+    <override>
+        <path>D:\Baiduyun\比赛巡线电动小车\main.c</path>
+        <encoding>System</encoding>
+    </override>
+</userOverrides>

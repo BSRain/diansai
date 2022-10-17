@@ -1,0 +1,73 @@
+#include <msp430f5529.h> 
+#include "stdint.h"
+#include "HX711.h"
+
+
+
+void UART(void)
+{
+//进行配置 
+UCA0CTL1 |= UCSWRST;
+//设置为UART模式
+UCA0CTL0 &= ~UCSYNC;
+//设置时钟源
+UCA0CTL1 |= BIT7;
+//设置波特率9600
+UCA0BR0 = 0X68;
+UCA0BR1 = 0X00;
+UCA0MCTL|= BIT1;
+// 端口复用
+P1SEL |= BIT1 + BIT2;
+//P1SEL2 |= BIT1 + BIT2;
+
+UCA0CTL1 &= ~UCSWRST;
+}
+
+void UARTSendString(uint8_t *pbuff,uint8_t num)
+{
+	uint8_t cnt = 0;
+	for(cnt = 0;cnt < num;cnt ++)
+	{
+		while(UCA0STAT & UCBUSY);
+		UCA0TXBUF = *(pbuff + cnt);
+	}
+}
+
+void PrintNumber(uint16_t num)
+{
+	uint8_t buff[6] = {0,0,0,0,0,'\n'};
+	uint8_t cnt = 0;
+	for(cnt = 0;cnt < 5;cnt ++)
+	{
+		buff[4 - cnt] = (uint8_t)(num % 10 + '0');
+		num /= 10;
+	}
+	UARTSendString(buff,6);
+}
+
+
+
+
+int main( void )
+{
+  float voltage = 0;
+  uint16_t adcvalue = 0;
+  time();
+  //key();
+  UART();
+  
+  // Stop watchdog timer to prevent time out reset
+  WDTCTL = WDTPW + WDTHOLD;
+  while(1)
+  {
+        
+        adcvalue =  read_hx711_24bit();
+    	//voltage = adcvalue * 2.5 / 1023;
+    	PrintNumber(adcvalue);
+    	
+    	//PrintFloat(voltage);
+    	__delay_cycles(300000);
+  }
+  
+  return 0;
+}

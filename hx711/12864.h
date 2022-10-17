@@ -1,0 +1,13 @@
+void Delay_Nus(uint t);
+void sendbyte(unsigned char zdata);
+void Delay_Nms(uint t);
+void Delay_1ms(void);
+void Write_Com(uchar com);
+void Write_Data(uchar dat);
+void SET_XY(uchar x, uchar y);
+void WriteOneChar(uchar x,uchar y,uchar dat);
+void Write_String(uchar x, uchar y,uchar *pt);
+void WriteChineseCharacters(uchar x,uchar y,uchar *pt, uchar n);
+void Write_Number(uchar x,uchar y,uint Num);
+void Write_5Number(uchar x,uchar y,uint Num);
+void LCD12864_Init(void);

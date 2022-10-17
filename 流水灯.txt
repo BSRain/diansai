@@ -1,0 +1,124 @@
+#include "MSP430G2553.h"
+
+
+
+void main( void )
+{
+  // Stop watchdog timer to prevent time out reset
+  WDTCTL = WDTPW + WDTHOLD;
+  //灯泡初始化为关闭
+  P1DIR |= BIT1;
+  P1DIR |= BIT2;
+  P1DIR |= BIT4;
+  P1DIR |= BIT5;
+  P1OUT &= ~BIT1;  //设置为低电平
+  P1OUT &= ~BIT2;
+  P1OUT &= ~BIT4;
+  P1OUT &= ~BIT5;
+
+  P1DIR |=  BIT7;  //蜂鸣器
+  P1OUT &= ~BIT7;
+  
+  //按钮初始化
+  P1REN |= BIT3;
+  P1OUT |= BIT3;
+  
+  P2REN |= BIT0;
+  P2OUT |= BIT0;
+  
+  P2REN |= BIT1; 
+  P2OUT |= BIT1;
+  
+  P2REN |= BIT2;
+  P2OUT |= BIT2;
+
+  
+  while(1)
+{  
+    if(!(P1IN & BIT3) == 1)//按钮1
+    {
+           P1OUT ^= BIT1;
+           __delay_cycles(100000);
+           
+           P1OUT ^= BIT2; 
+          __delay_cycles(100000);
+         
+          P1OUT ^= BIT4;
+           __delay_cycles(100000);
+          
+          P1OUT ^= BIT5;
+           __delay_cycles(100000);
+          
+          P1OUT |= BIT7 ;
+          __delay_cycles(100000);
+          P1OUT &= ~BIT7;
+           continue;
+
+    } 
+    else if(!(P2IN & BIT0)==1)//按钮2
+    {
+    
+          P1OUT ^= BIT5;
+          __delay_cycles(100000);
+
+          P1OUT ^= BIT4;
+          __delay_cycles(100000);
+           
+          P1OUT ^= BIT2;
+          __delay_cycles(100000);
+          
+          P1OUT ^= BIT1;
+          __delay_cycles(100000);
+          
+          P1OUT |= BIT7 ;
+          __delay_cycles(100000);
+          P1OUT &= ~BIT7;
+           continue;
+    }
+    else if( !(P2IN & BIT1)==1)//按钮3
+    {
+          P1OUT |= BIT5 ;  
+          P1OUT |= BIT1 ;
+          __delay_cycles(150000);
+           
+          P1OUT &= ~BIT5;
+          P1OUT &= ~BIT1;
+          
+          
+          P1OUT |= BIT7 ;
+          __delay_cycles(200000);
+          P1OUT &= ~BIT7;
+
+          P1OUT |= BIT4 ;
+          P1OUT |= BIT2 ;
+          __delay_cycles(150000);
+          P1OUT &= ~BIT4;
+          P1OUT &= ~BIT2;
+           continue;
+    }
+    else if( !(P2IN & BIT2)==1)//按钮4
+    {
+    
+    
+          P1OUT |= BIT4 ;
+          P1OUT |= BIT2 ;
+          __delay_cycles(150000);
+          P1OUT &= ~BIT4;
+          P1OUT &= ~BIT2;
+          
+   
+          P1OUT |= BIT7 ;
+          __delay_cycles(200000);
+          P1OUT &= ~BIT7;
+           
+          P1OUT |= BIT5 ; 
+          P1OUT |= BIT1 ;
+          __delay_cycles(150000);
+           
+          P1OUT &= ~BIT5;
+          P1OUT &= ~BIT1;
+           continue;
+     }
+    
+  }
+  }

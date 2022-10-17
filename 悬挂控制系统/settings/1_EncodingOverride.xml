@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<userOverrides>
+    <override>
+        <path>D:\diansai\悬挂控制系统\control.c</path>
+        <encoding>System</encoding>
+    </override>
+    <override>
+        <path>D:\diansai\悬挂控制系统\keys.c</path>
+        <encoding>System</encoding>
+    </override>
+    <override>
+        <path>D:\diansai\悬挂控制系统\main.c</path>
+        <encoding>System</encoding>
+    </override>
+    <override>
+        <path>D:\diansai\悬挂控制系统\main.h</path>
+        <encoding>System</encoding>
+    </override>
+    <override>
+        <path>D:\diansai\悬挂控制系统\oled.c</path>
+        <encoding>System</encoding>
+    </override>
+    <override>
+        <path>D:\diansai\悬挂控制系统\oled.h</path>
+        <encoding>System</encoding>
+    </override>
+</userOverrides>

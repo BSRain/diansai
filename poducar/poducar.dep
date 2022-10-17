@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>2</fileVersion>
+    <fileChecksum>996372480</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$PROJ_DIR$\Black_DELAY.c</file>
+            <file>$PROJ_DIR$\Black_GPIO.h</file>
+            <file>$PROJ_DIR$\Black_INTERRUPT.c</file>
+            <file>$PROJ_DIR$\Black_KEY.c</file>
+            <file>$PROJ_DIR$\Black_PWM.c</file>
+            <file>$PROJ_DIR$\Black_Init.h</file>
+            <file>$PROJ_DIR$\Black_readme.c</file>
+            <file>$PROJ_DIR$\Black_DELAY.h</file>
+            <file>$PROJ_DIR$\Black_Init.c</file>
+            <file>$PROJ_DIR$\Black_GPIO.c</file>
+            <file>$PROJ_DIR$\Black_Define.h</file>
+            <file>$PROJ_DIR$\Black_KEY.h</file>
+            <file>$PROJ_DIR$\Black_LED.c</file>
+            <file>$PROJ_DIR$\Black_INTERRUPT.h</file>
+            <file>$PROJ_DIR$\Black_OLED.c</file>
+            <file>$PROJ_DIR$\Black_All.h</file>
+            <file>$PROJ_DIR$\Black_OLED.h</file>
+            <file>$PROJ_DIR$\Black_OLED_fout.h</file>
+            <file>$PROJ_DIR$\Black_OLED_type.h</file>
+            <file>$PROJ_DIR$\Black_LED.h</file>
+            <file>$PROJ_DIR$\Black_PWM.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ymath.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\xtgmath.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\Black_GPIO.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\in430.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\Black_INTERRUPT.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\msp430f5529.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\Black_OLED.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\stdint.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\Black_LED.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\Black_readme.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\Black_KEY.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\Black_Init.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\PID.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\GY86.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\math.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\Black_USART.pbi</file>
+            <file>$PROJ_DIR$\PWM.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\key.r43</file>
+            <file>$PROJ_DIR$\Debug\List\poducar.map</file>
+            <file>$TOOLKIT_DIR$\inc\msp430.h</file>
+            <file>$PROJ_DIR$\key.c</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\Black_OLED.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\PWM.pbi</file>
+            <file>$PROJ_DIR$\PWM.c</file>
+            <file>$TOOLKIT_DIR$\lib\dlib\dl430xlsfn.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\PID.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\Black_KEY.pbi</file>
+            <file>$PROJ_DIR$\Debug\Exe\poducar.d43</file>
+            <file>$PROJ_DIR$\Debug\Obj\Black_DELAY.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\string.h</file>
+            <file>$PROJ_DIR$\GY86.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\poducar.pbd</file>
+            <file>$PROJ_DIR$\Debug\Obj\MPU6050.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\Black_PWM.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+            <file>$PROJ_DIR$\Black_USART.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\MPU6050.r43</file>
+            <file>$PROJ_DIR$\PID.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\Black_USART.r43</file>
+            <file>$PROJ_DIR$\key.h</file>
+            <file>$PROJ_DIR$\PID.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\Black_readme.r43</file>
+            <file>$TOOLKIT_DIR$\config\linker\lnk430f5529.xcl</file>
+            <file>$PROJ_DIR$\Black_USART.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\PWM.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\Black_PWM.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\Black_INTERRUPT.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\Black_GPIO.r43</file>
+            <file>$PROJ_DIR$\GY86.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
+            <file>$PROJ_DIR$\MPU6050.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\GY86.pbi</file>
+            <file>$PROJ_DIR$\Debug\Exe\poducar.ulp</file>
+            <file>$PROJ_DIR$\Debug\Obj\Black_DELAY.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\MPU6050.h</file>
+            <file>$TOOLKIT_DIR$\config\linker\multiplier32.xcl</file>
+            <file>$PROJ_DIR$\main.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\Black_LED.r43</file>
+            <file>$TOOLKIT_DIR$\lib\dlib\dl430xlsfn.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\Black_Init.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\key.pbi</file>
+        </outputs>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 53 41</file>
+                </tool>
+                <tool>
+                    <name>ULP430</name>
+                    <file> 83</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Black_DELAY.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 54</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 84</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 7 42 28 26 51</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 51 42 26 28 7</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Black_INTERRUPT.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 76</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 27</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 13 42 28 26 51</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 26 51 42 28 13</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Black_KEY.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 33</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 52</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 11 42 28 26 51</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 51 42 26 28 11</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Black_PWM.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 60</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 75</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 20 42 28 26 51</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 28 26 51 42 20</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Black_readme.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 68</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 32</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Black_Init.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 34</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 91</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 15 42 28 26 51 5 10 1 11 7 70 13 16 18 20</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 10 20 70 26 28 11 16 42 5 1 7 13 18 15 51</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Black_GPIO.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 77</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 25</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 1 42 28 26 51</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 26 51 42 28 1</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Black_LED.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 89</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 31</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 19 42 28 26 51</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 51 42 26 28 19</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Black_OLED.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 45</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 29</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 42 28 26 51 16 18 17</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 17 28 26 16 18 42 51</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\key.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 40</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 92</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 66 42 28 26 51</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 51 42 26 28 66</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\PWM.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 71</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 46</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 28 26 51 39 42</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 26 39 42 28 51</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\poducar.d43</name>
+            <outputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 41</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 69 87 54 77 34 76 33 89 45 60 68 65 74 63 35 90</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\GY86.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 36</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 82</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 78 42 28 26 51 16 18</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 26 42 18 16 28 51 78</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Black_USART.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 65</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 38</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 70 42 28 26 51 7</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 42 51 26 7 28 70</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\PID.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 35</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 49</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 44 50 24 55 48 85 21 73 61 79 67</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 85 24 79 50 21 48 67 61 55 73 44</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\MPU6050.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 63</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 59</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 86 42 28 26 51 30 50 24 55 48 85 21 73 16 18 37 22 23 44 61 79 56</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 56 22 37 85 50 30 44 28 26 24 21 48 18 61 86 42 16 51 55 73 23 79</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 74</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 72</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 81</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 44 50 24 55 48 85 21 73 61 79 86 42 28 26 51 30 16 18 15 5 10 1 11 7 70 13 20 67</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 50 1 16 61 24 30 28 26 42 55 73 13 86 15 67 79 21 48 85 51 5 7 18 44 10 11 70 20</file>
+                </tool>
+            </inputs>
+        </file>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>XLINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>
